@@ -12,12 +12,15 @@ import javax.swing.JOptionPane;
  * @author danilo.asilv10
  */
 public class Principal extends javax.swing.JFrame {
+
     // teste
     /**
      * Creates new form Principal
      */
     public Principal() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -116,9 +119,14 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadastrarActionPerformed
-        Aluno a = new Aluno();
-        a.setNome(jTNome.getText());
-        JOptionPane.showMessageDialog(rootPane, a.getNome());
+        Aluno a = new Aluno(jTNome.getText(), jTEmail.getText(),
+                jTTelefone.getText(), jTDataNascimento.getText());
+
+       Resultado r = new Resultado(a);
+       r.setVisible(true);
+       r.setLocationRelativeTo(this);
+       
+       JOptionPane.showMessageDialog(null, "casdastro realizado com sucesso!!");
     }//GEN-LAST:event_jBCadastrarActionPerformed
 
     /**
